@@ -1,0 +1,259 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* THEME VARIABLES */
+:root {
+  --bg: #f0f0f0;
+  --text: #333;
+  --tile: white;
+  --correct: #6aaa64;
+  --partial: #c9b458;
+  --wrong: #787c7e;
+  --header: #4169e1;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* COLOR FEEDBACK (FIXED ORDER + OVERRIDES) */
+.box.correct {
+  background-color: #6aaa64 !important;
+  color: white !important;
+  border: none;
+}
+
+.box.partial {
+  background-color: #c9b458 !important;
+  color: white !important;
+  border: none;
+}
+
+.box.wrong {
+  background-color: #787c7e !important;
+  color: white !important;
+  border: none;
+}
+
+/* BODY STYLING */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: center;
+}
+main {
+  min-height: 80vh;
+  padding: 0 2rem;
+}
+/* HEADER NAVIGATION */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--header);
+  color: white;
+}
+.sticky {
+  position: sticky;
+  top: 0;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 40px;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+}
+.burger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* TITLE */
+.title {
+  margin: 2rem 0 1rem;
+  font-size: 2rem;
+  color: #4169e1;
+  animation: fadeIn 0.7s ease-in;
+}
+
+/* GAME BOARD GRID */
+#game-board {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0.5rem;
+  max-width: 320px;
+  margin: 0 auto 2rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ccc;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: var(--tile);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.7s ease-in;
+}
+
+/* MESSAGE DISPLAY */
+.message {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #333;
+}
+
+/* ON-SCREEN KEYBOARD */
+.keyboard {
+  max-width: 484px;
+  margin: 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.key {
+  width: 40px;
+  height: 50px;
+  font-size: 1rem;
+  border: none;
+  background-color: #d3d6da;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.key:hover {
+  background-color: #bbb;
+}
+
+.key.backspace {
+  width: 90px;
+  background-color: #ff6961;
+  color: white;
+}
+
+.key.enter {
+  width: 80px;
+  background-color: #4caf50;
+  color: white;
+}
+
+/* NEW WORD BUTTON */
+.btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ffe15d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #fcd82d;
+}
+footer {
+  margin-top: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--header);
+  height: 70px;
+  color: white;
+  font-size: 16px;
+}
+
+.key.correct {
+  background-color: #6aaa64 !important;
+  color: white !important;
+}
+
+.key.partial {
+  background-color: #c9b458 !important;
+  color: white !important;
+}
+
+.key.wrong {
+  background-color: #787c7e !important;
+  color: white !important;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 420px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--header);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    border: 1px solid var(--border);
+    padding: 1rem;
+    width: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .box {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+
+  .key {
+    width: 30px;
+    height: 45px;
+    font-size: 0.9rem;
+  }
+}

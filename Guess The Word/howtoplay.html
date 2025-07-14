@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Play</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="Logo" class="logo" />
+        </a>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Game</a>
+        <a href="about.html">About</a>
+        <a href="howtoplay.html">How to Play</a>
+        <a href="myscores.html">Scores</a>
+      </nav>
+      <div class="burger">&#9776;</div>
+    </header>
+    <main>
+      <h1 class="title">📖 How to Play</h1>
+      <p>Try to guess the hidden 5-letter word within 6 tries.</p>
+
+      <ul
+        style="
+          text-align: left;
+          max-width: 600px;
+          margin: 1rem auto;
+          font-size: 1.1rem;
+        "
+      >
+        <li>Each guess must be a real 5-letter word.</li>
+        <li>After each guess, the color of the tiles will change:</li>
+        <ul>
+          <li>
+            <span class="box correct">G</span> - Correct letter in the correct
+            spot
+          </li>
+          <li>
+            <span class="box partial">O</span> - Correct letter, wrong spot
+          </li>
+          <li><span class="box wrong">X</span> - Letter is not in the word</li>
+        </ul>
+        <li>
+          You get points based on how fast you guess:
+          <ul>
+            <li>1st try: 100 points</li>
+            <li>2nd try: 80 points</li>
+            <li>3rd try: 60 points</li>
+            <li>4th try: 40 points</li>
+            <li>5th try: 20 points</li>
+            <li>6th try: 10 points</li>
+            <li>Wrong guess: 0 points</li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        After each round, a new word will automatically start. Your scores are
+        saved!
+      </p>
+    </main>
+    <footer>
+      <p>© 2025 Guessword. Created By Lasha Abramishvili</p>
+    </footer>
+    <script src="js/app.js"></script>
+  </body>
+</html>
