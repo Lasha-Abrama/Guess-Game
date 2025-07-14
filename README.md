@@ -25,7 +25,7 @@ A simple and fun Wordle-style word guessing game built with **HTML**, **CSS**, a
 
 ## 🖼️ Demo
 
-Live demo: [Play Now on Netlify](https://your-netlify-link.netlify.app)
+Live demo: [Play Now on Netlify]([https://your-netlify-link.netlify.app](https://guess-game-lasha-abramishvili.netlify.app/))
 
 ---
 
